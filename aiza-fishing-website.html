@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aiza Fishing Tackle - Premium fishing gear in Mangalore. Shop rods, reels, lines, and accessories from Shimano, Daiwa, Abu Garcia, and more.">
+    <meta name="keywords" content="fishing tackle, Mangalore, fishing rods, fishing reels, Shimano, Daiwa, Abu Garcia, fishing gear">
+    <title>Aiza Fishing Tackle - Premium Fishing Gear in Mangalore</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Images/aft_logo.png">
+    <link rel="shortcut icon" type="image/png" href="Images/aft_logo.png">
+    <link rel="apple-touch-icon" href="Images/aft_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #007BFF;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #000000;
+            --light-text: #e8e8e8;
+            --gray-text: #a0a0a0;
+            --accent-glow: rgba(0, 123, 255, 0.3);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 123, 255, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 75px;
+            transition: transform 0.3s ease;
+            object-fit: contain;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                height: 75px;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--light-text);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23007BFF" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            animation: wave 15s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--gray-text);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+            box-shadow: 0 5px 20px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--accent-glow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--light-text);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 1rem auto;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray-text);
+            margin-bottom: 3rem;
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .category-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0, 123, 255, 0.3);
+            border-color: var(--primary-blue);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-blue);
+        }
+
+        /* Brand Carousel */
+        .brands-section {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 3rem 2rem;
+        }
+
+        .brands-carousel {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .brand-logo {
+            width: 180px;
+            height: 100px;
+            object-fit: contain;
+            filter: brightness(1.2);
+            transition: all 0.3s ease;
+            opacity: 0.8;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .brand-logo:hover {
+            filter: brightness(1.3);
+            transform: scale(1.15);
+            opacity: 1;
+            box-shadow: 0 5px 20px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 123, 255, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 67, 146, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-blue);
+        }
+
+        .product-info p {
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-info .btn {
+            margin-top: auto;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(0, 67, 146, 0.2));
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            color: var(--gray-text);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            border: 1px solid rgba(0, 123, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light-text);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 3rem;
+            border: 2px solid rgba(0, 123, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            padding: 3rem 2rem 1rem;
+            border-top: 1px solid rgba(0, 123, 255, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--gray-text);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 123, 255, 0.1);
+            color: var(--gray-text);
+        }
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .call-btn {
+            background: var(--primary-blue);
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .floating-buttons {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Page Navigation */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <img src="Images/aft_logo.png" alt="Aiza Fishing Tackle" class="logo">
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" data-page="home">Home</a></li>
+                <li><a href="#" data-page="about">About</a></li>
+                <li><a href="#" data-page="products">Products</a></li>
+                <li><a href="#" data-page="gallery">Gallery</a></li>
+                <li><a href="#" data-page="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>AIZA FISHING TACKLE</h1>
+                <p class="tagline">Premium Fishing Gear in Mangalore</p>
+                <p>Welcome to Aiza Fishing Tackle — your one-stop destination for premium fishing gear in Mangalore. We stock the finest rods, reels, lines, and accessories from world-leading brands like Shimano, Daiwa, and Abu Garcia.</p>
+                <div class="btn-group">
+                    <a href="https://share.google/sLDHE07AOd8vsoNi8" target="_blank" class="btn btn-primary">Visit Us</a>
+                    <a href="#" data-page="contact" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section>
+            <h2 class="section-title">Product Categories</h2>
+            <p class="section-subtitle">Explore our wide range of premium fishing equipment</p>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">🎣</div>
+                    <h3>Fishing Rods</h3>
+                    <p>Premium rods for all fishing styles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎡</div>
+                    <h3>Fishing Reels</h3>
+                    <p>High-performance reels</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🧵</div>
+                    <h3>Braids & Lines</h3>
+                    <p>Durable fishing lines</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🪝</div>
+                    <h3>Hooks</h3>
+                    <p>Sharp and reliable hooks</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🐟</div>
+                    <h3>Soft Lures</h3>
+                    <p>Lifelike lure designs</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⚓</div>
+                    <h3>Jigs & Jig Heads</h3>
+                    <p>Versatile jigging gear</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎏</div>
+                    <h3>Sabiki Rigs</h3>
+                    <p>Multi-hook rigs for baitfish</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⚓</div>
+                    <h3>Sinkers & Weights</h3>
+                    <p>Various weights for all conditions</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brands Section -->
+        <section class="brands-section">
+            <h2 class="section-title">Premium Brands We Stock</h2>
+            <div class="brands-carousel">
+                <img src="Images/logo_shimano.svg" alt="Shimano" class="brand-logo">
+                <img src="Images/abu-garcia.svg" alt="Abu Garcia" class="brand-logo">
+                <img src="Images/daiwa-logo.jpg" alt="Daiwa" class="brand-logo">
+                <img src="Images/penn-logo.png" alt="Penn Fishing" class="brand-logo">
+                <img src="Images/z-man-logo.png" alt="Z-Man" class="brand-logo">
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section style="padding-top: 120px;">
+            <h2 class="section-title">About Aiza Fishing Tackle</h2>
+            <p class="section-subtitle">Serving Mangalore's anglers with top-quality gear</p>
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">At Aiza Fishing Tackle, we're passionate about helping anglers of all levels find the perfect gear for their next adventure. Whether you're a beginner or a pro, our expert team is here to guide you toward the best equipment that suits your needs.</p>
+                <div style="background: rgba(0, 123, 255, 0.1); border: 1px solid rgba(0, 123, 255, 0.3); border-radius: 15px; padding: 3rem; margin: 3rem 0;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Our Mission</h3>
+                    <p>Serving Mangalore's anglers with top-quality gear from world-class brands. We believe in providing not just products, but a complete fishing experience backed by expertise and passion.</p>
+                </div>
+                <div class="categories-grid" style="margin-top: 3rem;">
+                    <div class="category-card">
+                        <div class="category-icon">✨</div>
+                        <h3>Quality Products</h3>
+                        <p>Only the best brands and equipment</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🎯</div>
+                        <h3>Expert Advice</h3>
+                        <p>Knowledgeable staff to guide you</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🏆</div>
+                        <h3>Customer First</h3>
+                        <p>Your satisfaction is our priority</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🔧</div>
+                        <h3>Equipment Maintenance</h3>
+                        <p>Professional rod and reel servicing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products" class="page">
+        <section style="padding-top: 120px;">
+            <h2 class="section-title">Our Products</h2>
+            <p class="section-subtitle">Browse our extensive collection</p>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🎣</div>
+                    <div class="product-info">
+                        <h3>Fishing Rods</h3>
+                        <p>Premium casting and spinning rods from top brands. Perfect balance, sensitivity, and power.</p>
+                        <a href="https://api.whatsapp.com/send?phone=919663399288&text=Hi, I'm interested in Fishing Rods" class="btn btn-primary" style="width: 100%;">Contact on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🎡</div>
+                    <div class="product-info">
+                        <h3>Fishing Reels</h3>
+                        <p>High-performance spinning and baitcasting reels with smooth drag systems.</p>
+                        <a href="https://api.whatsapp.com/send?phone=919663399288&text=Hi, I'm interested in Fishing Reels" class="btn btn-primary" style="width: 100%;">Contact on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🧵</div>
+                    <div class="product-info">
+                        <h3>Braided Lines</h3>
+                        <p>Strong, durable braided fishing lines for all conditions.</p>
+                        <a href="https://api.whatsapp.com/send?phone=919663399288&text=Hi, I'm interested in Braided Lines" class="btn btn-primary" style="width: 100%;">Contact on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🪝</div>
+                    <div class="product-info">
+                        <h3>Fishing Hooks</h3>
+                        <p>Sharp, reliable hooks in various sizes for all fishing techniques.</p>
+                        <a href="https://api.whatsapp.com/send?phone=919663399288&text=Hi, I'm interested in Fishing Hooks" class="btn btn-primary" style="width: 100%;">Contact on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🐟</div>
+                    <div class="product-info">
+                        <h3>Soft Lures</h3>
+                        <p>Lifelike soft plastic lures that attract even the most cautious fish.</p>
+                        <a href="https://api.whatsapp.com/send?phone=919663399288&text=Hi, I'm interested in Soft Lures" class="btn btn-primary" style="width: 100%;">Contact on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">⚓</div>
+                    <div class="product-info">
+                        <h3>Jigs & Jig Heads</h3>
+                        <p>Versatile jigging equipment for various fishing conditions.</p>
+                        <a href="https://api.whatsapp.com/send?phone=919663399288&text=Hi, I'm interested in Jigs" class="btn btn-primary" style="width: 100%;">Contact on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🎏</div>
+                    <div class="product-info">
+                        <h3>Sabiki Rigs</h3>
+                        <p>Multi-hook rigs perfect for catching baitfish and small species.</p>
+                        <a href="https://api.whatsapp.com/send?phone=919663399288&text=Hi, I'm interested in Sabiki Rigs" class="btn btn-primary" style="width: 100%;">Contact on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🎯</div>
+                    <div class="product-info">
+                        <h3>Fishing Accessories</h3>
+                        <p>Complete range of tackle boxes, tools, and fishing accessories.</p>
+                        <a href="https://api.whatsapp.com/send?phone=919663399288&text=Hi, I'm interested in Accessories" class="btn btn-primary" style="width: 100%;">Contact on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Gallery Page -->
+    <div id="gallery" class="page">
+        <section style="padding-top: 120px;">
+            <h2 class="section-title">Gallery</h2>
+            <p class="section-subtitle">Explore our collection and catches</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="gallery/fishing_rod.jpg" alt="Fishing Rod" />
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/fishing_reel.jpeg" alt="Fishing Reel" />
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/braided_line.jpeg" alt="Braided Line" />
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/fishing_hook.jpg" alt="Fishing Hook" />
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/Soft Lures.jpeg" alt="Soft Lures" />
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/Jigs & Jig Heads.jpeg" alt="Jigs & Jig Heads" />
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/Sabiki Rigs.jpg" alt="Sabiki Rigs" />
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/Fishing Accessories.jpg" alt="Fishing Accessories" />
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section style="padding-top: 120px;">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Get in touch with us</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem;">Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:9663399288" style="color: var(--light-text);">+91 9663399288</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>SHOP NO. 5, SMC TRUST COMPLEX<br>NEAR ABBAKKA CIRCLE, BEACH ROAD<br>ULLAL, MANGALORE – 575020</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <a href="https://api.whatsapp.com/send?phone=919663399288" style="color: var(--light-text);">Chat with us</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Sunday - Saturday : 8:30 AM - 9:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem;">Send us a Message</h3>
+                    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" required placeholder="Enter 10-digit phone number" maxlength="10" pattern="[6-9][0-9]{9}">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="5" required placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12586.824441734661!2d74.83465104059283!3d12.820712621279254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35d536d285845%3A0x952ba1df7a6fa28b!2sAiza%20Fishing%20Tackle!5e0!3m2!1sen!2sin!4v1761383373445!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Aiza Fishing Tackle</h3>
+                <p>Your trusted source for premium fishing gear in Mangalore.</p>
+                <p style="margin-top: 1rem;">All types of fishing items available here.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#" data-page="home">Home</a>
+                <a href="#" data-page="about">About Us</a>
+                <a href="#" data-page="products">Products</a>
+                <a href="#" data-page="gallery">Gallery</a>
+                <a href="#" data-page="contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Products</h3>
+                <a href="#" data-page="products">Fishing Rods</a>
+                <a href="#" data-page="products">Fishing Reels</a>
+                <a href="#" data-page="products">Braids & Lines</a>
+                <a href="#" data-page="products">Hooks & Lures</a>
+                <a href="#" data-page="products">Jigs & Accessories</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📞 +91 9663399288</p>
+                <p>📍 Shop No. 5, SMC Trust Complex<br>Near Abbakka Circle, Beach Road<br>Ullal, Mangalore - 575020</p>
+                <a href="https://api.whatsapp.com/send?phone=919663399288">💬 WhatsApp</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aiza Fishing Tackle. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://api.whatsapp.com/send?phone=919663399288" class="floating-btn whatsapp-btn" title="WhatsApp">💬</a>
+        <a href="tel:9663399288" class="floating-btn call-btn" title="Call Now">📞</a>
+    </div>
+
+    <script>
+        // Page Navigation
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('[data-page]');
+        const navbar = document.getElementById('navbar');
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinksContainer = document.getElementById('navLinks');
+
+        function showPage(pageName) {
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageName).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Close mobile menu
+            navLinksContainer.classList.remove('active');
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageName = link.getAttribute('data-page');
+                showPage(pageName);
+                
+                // Update active link
+                navLinks.forEach(l => l.style.color = '');
+                link.style.color = 'var(--primary-blue)';
+            });
+        });
+
+        // Mobile Menu Toggle
+        mobileToggle.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const name = form.querySelector('input[type="text"]').value;
+            const phone = form.querySelector('input[type="tel"]').value;
+            const message = form.querySelector('textarea').value;
+            
+            // Validate form
+            if (!name || !phone || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Validate phone number (10 digits only)
+            const phoneRegex = /^[6-9]\d{9}$/;
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9');
+                return;
+            }
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hi, I'm ${name}. ${message}. My phone: ${phone}`;
+            
+            // Try different WhatsApp URL formats for better compatibility
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=919663399288&text=${encodeURIComponent(whatsappMessage)}`;
+            
+            // Create a temporary link and click it
+            const link = document.createElement('a');
+            link.href = whatsappUrl;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show success message
+            alert('Opening WhatsApp... Please send the message to complete your inquiry.');
+            
+            // Reset form
+            form.reset();
+        }
+
+        // Smooth scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.category-card, .product-card, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Gallery lightbox effect
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.style.transform = 'scale(1.5)';
+                item.style.zIndex = '1000';
+                item.style.position = 'fixed';
+                item.style.top = '50%';
+                item.style.left = '50%';
+                item.style.transform = 'translate(-50%, -50%) scale(1.2)';
+                
+                setTimeout(() => {
+                    item.style.transform = '';
+                    item.style.zIndex = '';
+                    item.style.position = '';
+                    item.style.top = '';
+                    item.style.left = '';
+                }, 2000);
+            });
+        });
+
+        // Add active state to home link on load
+        document.querySelector('[data-page="home"]').style.color = 'var(--primary-blue)';
+    </script>
+</body>
+</html>

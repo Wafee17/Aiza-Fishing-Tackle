@@ -1,0 +1,29 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore backup files
+*.bak
+*.backup
+*~
+
+# Ignore log files
+*.log
+
+# Ignore compressed files (keep original sources)
+*.zip
+*.rar
+*.7z
+
+# Ignore AI/design files (optional - you can remove this if you want to include them)
+*.ai
+*.psd
+*.sketch
