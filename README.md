@@ -8,8 +8,7 @@
 A **responsive and SEO-optimized company website** developed for **Aiza Fishing Tackle** to enhance their online presence and customer engagement.  
 The website is designed with a clean and modern interface, smooth navigation, and mobile-friendly layouts.  
 
-It includes structured sections like **About**, **Services**, **Products**, and **Contact**, ensuring a professional and intuitive user experience.  
-The **company logo** in the navigation bar is clickable and redirects users to the homepage, adding to the overall usability.
+It includes structured sections like **About**, **Services**, **Products**, and **Contact**, ensuring a professional and intuitive user experience.
 
 ---
 
