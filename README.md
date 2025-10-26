@@ -1,6 +1,6 @@
 # 🎣 Aiza Fishing Tackle – Company Website
 
-**Live Demo:** [https://wafee17.github.io/Aiza-Fishing-Tackle/](https://wafee17.github.io/Aiza-Fishing-Tackle/)
+**Live Demo:** [https://tinyurl.com/aizafishing](https://tinyurl.com/aizafishing)
 
 ---
 
@@ -30,16 +30,11 @@ The **company logo** in the navigation bar is clickable and redirects users to t
 
 ---
 
-## 📸 Preview
-![Website Preview](https://raw.githubusercontent.com/wafee17/Aiza-Fishing-Tackle/main/preview.png)
-> *(Optional: Add a screenshot of your homepage as `preview.png` in your repo root for a live preview image.)*
-
----
 
 ## 🚀 Deployment
 This project is hosted on **GitHub Pages**.  
 To view the live version, visit:  
-👉 [https://wafee17.github.io/Aiza-Fishing-Tackle/](https://wafee17.github.io/Aiza-Fishing-Tackle/)
+👉 [https://tinyurl.com/aizafishing](https://tinyurl.com/aizafishing)
 
 ---
 
